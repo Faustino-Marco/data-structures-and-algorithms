@@ -24,7 +24,11 @@ Returns: ['dyoll', 'eimaj'];
 
 const getNames = (arr) => {
   // Solution code here...
-   
+   return arr.map((obj) => {
+     return obj.name.split('').reduce((backwards, letter) => {
+       return letter + backwards;
+     }, '');
+   });
 };
 
 /* ------------------------------------------------------------------------------------------------
