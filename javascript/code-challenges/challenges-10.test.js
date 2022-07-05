@@ -32,6 +32,9 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  let highest = [];
+  highest = matrix.map(arr => Math.max(...arr));
+  return Math.max(...highest);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,6 +53,9 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+  return matrix.reduce((a, b) => {
+    return a + b.reduce((c, d) => c + d);
+  }, 0);
 };
 
 
@@ -77,7 +83,13 @@ const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
   // Solution code here...
-
+  let totalCookies = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  stores.forEach(store => {
+    for (let i = 0; i < 12; i = i + 1) {
+      totalCookies[i] = totalCookies[i] + store[i];
+    }
+  });
+  return totalCookies;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,6 +129,13 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
+  let treats = [];
+  arr.forEach(store => {
+    if (store.store === 'Pet store') {
+      treats=store.items[1].quantity;
+    }
+  });
+  return treats;
 };
 
 /* ------------------------------------------------------------------------------------------------
