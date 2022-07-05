@@ -20,6 +20,7 @@ Becomes:
 
 function transformToLis(obj){
   // Solution code here...
+  obj.entries()
 };
 
 /* ------------------------------------------------------------------------------------------------
