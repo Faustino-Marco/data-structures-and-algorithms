@@ -3,7 +3,7 @@ Write a function called reverseArray which takes an array as an argument. Withou
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-![Array-Reverse](./img/401d19%20Simpliciano%20Array-Reverse.jpg)
+![Array-Reverse-img](./img/401d19%20Simpliciano%20Array-Reverse.jpg)
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
