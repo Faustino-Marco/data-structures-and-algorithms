@@ -10,6 +10,7 @@ class LinkedList:
     def __str__(self):
 
         txt = ""
+
         #start at head
         current = self.head
 
@@ -40,7 +41,7 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-class Node():
+class Node:
     def __init__(self, value, next=None):
         self.value = value
         
