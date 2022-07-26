@@ -30,7 +30,7 @@ class LinkedList:
             if current.value == target:
                 return True
             current = current.next
-        
+
         return False
 
     def insert(self, value):
@@ -41,7 +41,7 @@ class LinkedList:
         new_node = Node(value)
         new_node.next = self.head
         self.head = new_node
-    
+
     def append(self, value):
         # new_node = Node(value)
 
@@ -64,14 +64,17 @@ class LinkedList:
                 # proceed to next node
                 current = current.next
 
-           
+
     def insert_before(self, search_val, value):
         new_node = Node(value)
+
+        if not self.head:
+            raise TargetError
 
         if self.head.value == search_val:
             self.insert(value)
             return
-        
+
         # start at head
         current = self.head
         # while head exists
@@ -83,16 +86,21 @@ class LinkedList:
                 # change current next to new node
                 current.next = new_node
                 # get out of loop
-                break
+                return
+                #DANGER!!
             # otherwise keep looking
             else:
                 current = current.next
-    
+        raise TargetError
+
+
     def insert_after(self, search_val, value):
         # new_node = Node(value)
 
         #start at head
         current = self.head
+        if not self.head:
+            raise TargetError
 
         # if head exists
         while current:
@@ -102,12 +110,13 @@ class LinkedList:
                 return
             else:
                 current = current.next
+        raise TargetError
 
 class Node:
     def __init__(self, value, next=None):
         self.value = value
         self.next = next
-        
 
-class TargetError:
+
+class TargetError(Exception):
     pass
