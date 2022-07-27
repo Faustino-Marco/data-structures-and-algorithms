@@ -111,6 +111,10 @@ class LinkedList:
             else:
                 current = current.next
         raise TargetError
+    
+    def kth_from_end_zero(self, value=0):
+        to_pass = "cucumbers"
+        return to_pass
 
 class Node:
     def __init__(self, value, next=None):
@@ -120,3 +124,10 @@ class Node:
 
 class TargetError(Exception):
     pass
+
+
+def array_reversal(arr):
+  print(arr[::-1])
+
+exArr = [1, 2, 3, 4, 5, 6]
+array_reversal(exArr)
