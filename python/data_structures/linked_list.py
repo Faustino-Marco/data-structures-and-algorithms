@@ -1,12 +1,25 @@
+from weakref import ref
+
+
 class LinkedList:
     """
-    Put docstring here
+    This class creates a Linked List.
+    Methods:
+    - __str__()
+    - includes(target)
+    - insert(value)
+    - append(value)
+    - insert_before(search_val, value)
+    - insert_after(search_val, value)
+    - kth_from_end(value=0)
     """
+
 
     def __init__(self):
         # initialization here
         self.head = None
         self.tail = None
+
 
     def __str__(self):
 
@@ -24,6 +37,7 @@ class LinkedList:
 
         return txt + "NULL"
 
+
     def includes(self, target):
         current = self.head
         while current:
@@ -32,6 +46,7 @@ class LinkedList:
             current = current.next
 
         return False
+
 
     def insert(self, value):
         """
@@ -42,11 +57,8 @@ class LinkedList:
         new_node.next = self.head
         self.head = new_node
 
-    def append(self, value):
-        # new_node = Node(value)
 
-        # self.tail.next = new_node
-        # self.tail = new_node
+    def append(self, value):
 
         new_node = Node(value)
 
@@ -112,9 +124,30 @@ class LinkedList:
                 current = current.next
         raise TargetError
     
-    def kth_from_end_zero(self, value=0):
-        to_pass = "cucumbers"
-        return to_pass
+
+    def kth_from_end(self, value=0):
+        if value < 0:
+            raise TargetError
+        ref_arr = []
+        #start at head
+        current = self.head
+        # traverse
+        while current:
+            # capture value at current node
+            # put val into ref arr
+            ref_arr.append(current.value)
+            current = current.next
+        length_of_ref_arr = len(ref_arr)
+        print(ref_arr)
+        target_idx = length_of_ref_arr - (value + 1)
+        print(target_idx)
+        print(ref_arr[target_idx])
+        if ref_arr[target_idx] and target_idx >= 0:
+            return ref_arr[target_idx]
+        else:
+            raise TargetError
+    
+
 
 class Node:
     def __init__(self, value, next=None):
@@ -125,9 +158,3 @@ class Node:
 class TargetError(Exception):
     pass
 
-
-def array_reversal(arr):
-  print(arr[::-1])
-
-exArr = [1, 2, 3, 4, 5, 6]
-array_reversal(exArr)
