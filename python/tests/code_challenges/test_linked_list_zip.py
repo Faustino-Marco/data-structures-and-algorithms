@@ -1,6 +1,6 @@
 import pytest
 from code_challenges.linked_list_zip import zip_lists
-from data_structures.linked_list import LinkedList
+from data_structures.linked_list import LinkedList, sum_odd
 
 
 def test_exists():
@@ -86,3 +86,15 @@ def test_b_empty():
     for value in reversed([1, 2, 3]):
         expected.insert(value)
     assert str(actual) == str(expected)
+
+
+
+
+
+def test_sum_odd():
+    linked_list = LinkedList()
+    for value in reversed([1,3,7,4]):
+        linked_list.insert(value)
+    actual = sum_odd(linked_list)
+    expected = 11
+    assert actual == expected
