@@ -1,6 +1,7 @@
 class Stack:
     """
-    Put docstring here
+    Create a stack:
+    Top, next
     """
 
     def __init__(self):

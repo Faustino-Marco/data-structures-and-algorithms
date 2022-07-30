@@ -18,7 +18,6 @@ class LinkedList:
     def __init__(self):
         # initialization here
         self.head = None
-        self.tail = None
 
 
     def __str__(self):
@@ -148,7 +147,6 @@ class LinkedList:
             raise TargetError
     
 
-
 class Node:
     def __init__(self, value, next=None):
         self.value = value
@@ -159,5 +157,18 @@ class TargetError(Exception):
     pass
 
 
+
+
+
+
+
+def sum_odd(my_list):
+    new_arr = []
+    current = my_list.head
+    while current:
+        if current.value % 2 != 0:
+            new_arr.append(current.value)
+        current = current.next
+    return sum(new_arr)
 
 
