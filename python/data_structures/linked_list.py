@@ -71,6 +71,7 @@ class LinkedList:
                 current.next = new_node
 
                 break
+
             else:
                 # proceed to next node
                 current = current.next
@@ -106,7 +107,6 @@ class LinkedList:
 
 
     def insert_after(self, search_val, value):
-        # new_node = Node(value)
 
         #start at head
         current = self.head
