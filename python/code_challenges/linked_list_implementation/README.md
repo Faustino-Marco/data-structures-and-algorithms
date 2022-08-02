@@ -7,8 +7,3 @@ Create a Node class that has properties for the value stored in the Node, and a 
 
 ## Approach & Efficiency
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
-- The fucntion I want to depict in this process is as follows:
-
-```python
-
-```
