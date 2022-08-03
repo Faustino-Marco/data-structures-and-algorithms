@@ -6,8 +6,11 @@ class AnimalShelter:
 
 
 class Dog:
-    pass
+    def __init__(self):
+        self.animal_type = "Dog"
 
 
 class Cat:
-    pass
+    def __init__(self):
+        self.animal_type = "Cat"
+
