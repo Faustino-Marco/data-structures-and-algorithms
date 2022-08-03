@@ -5,7 +5,7 @@ class PseudoQueue:
         self.front = None
         self.rear = None
     
-    def enqueue(self, value):
+    def enqueue(self, stack, value):
         new_rear = Node(value)
         if not self.rear:
             self.rear = new_rear
@@ -15,7 +15,7 @@ class PseudoQueue:
             old_rear.next = new_rear
             self.rear = new_rear
 
-    def dequeue(self):
+    def dequeue(self, stack):
         if not self.front:
             raise InvalidOperationError
         else:
@@ -33,3 +33,4 @@ class Node:
 
 class InvalidOperationError(Exception):
     pass
+
