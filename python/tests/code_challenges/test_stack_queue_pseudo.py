@@ -1,11 +1,21 @@
 import pytest
 from code_challenges.stack_queue_pseudo import PseudoQueue
+from data_structures.stack_and_queue.stack import Stack
 
 
 def test_exists():
     assert PseudoQueue
 
-@pytest.mark.skip("TODO")
+def test_inputs_from_challenge_instructions():
+    test_stack_1 = Stack()
+    test_stack_1.push(10)
+    test_stack_1.push(15)
+    test_stack_1.push(20)
+
+
+
+
+# @pytest.mark.skip("TODO")
 def test_enqueue_one():
     pq = PseudoQueue()
     pq.enqueue("apples")
