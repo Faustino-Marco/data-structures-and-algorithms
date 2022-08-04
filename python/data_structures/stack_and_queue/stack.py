@@ -20,6 +20,8 @@ class Stack:
             raise InvalidOperationError("Method not allowed on empty collection")
         else:
             old_top = self.top
+            print(f"old top val ", {old_top.value})
+            print(f"self top val ", {self.top.value})
             self.top = self.top.next
             return old_top.value
     
