@@ -9,7 +9,7 @@ def test_validates_two_square_brackets():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_fails_two_square_brackets_flipped():
     actual = multi_bracket_validation("][")
     expected = False
@@ -37,7 +37,7 @@ def test_validates_two_parentheses():
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_fails_two_parentheses_flipped():
     actual = multi_bracket_validation(")(")
     expected = False
@@ -60,6 +60,6 @@ def test_nested():
 
 @pytest.mark.skip("TODO")
 def test_mismatched():
-    actual = multi_bracket_validation("[}")
+    actual = multi_bracket_validation("[{]}")
     expected = False
     assert actual == expected
