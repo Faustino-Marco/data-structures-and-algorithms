@@ -13,8 +13,6 @@ def test_inputs_from_challenge_instructions():
     test_stack_1.push(20)
 
 
-
-
 # @pytest.mark.skip("TODO")
 def test_enqueue_one():
     pq = PseudoQueue()
