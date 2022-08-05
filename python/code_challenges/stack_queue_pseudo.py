@@ -4,7 +4,7 @@ class PseudoQueue:
     def __init__(self):
         self.in_stack = Stack()
         self.out_stack = Stack()
- 
+
 
     def enqueue(self, value):
         while self.out_stack.top:
