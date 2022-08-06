@@ -1,10 +1,17 @@
+from platform import node
 import pytest
 from data_structures.binary_tree import BinaryTree, Node
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_exists():
     assert BinaryTree
+
+def test_node_creation():
+    node = Node("apples")
+    assert node.value == "apples"
+    assert node.left is None
+    assert node.right is None
 
 
 @pytest.mark.skip("TODO")
