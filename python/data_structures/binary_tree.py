@@ -3,14 +3,29 @@ from platform import node
 
 class BinaryTree:
     """
+    According to fixture in "test_binary_tree.py":
+    ____________________________
                 a
         b               c
     d       e       f       g
+    ____________________________
+
+    Methods:
+    - pre_order()
+        - Returns tree values in 'root-left-right' order
+
+    - in_order()
+        - Returns tree values in 'left-root-right' order
+
+    - post_order()
+        - Returns tree values in 'left-right-root' order
     """
+
 
     def __init__(self):
         # initialization here
         self.root = None
+
 
     def pre_order(self):
         # root - left - right
@@ -38,6 +53,7 @@ class BinaryTree:
         # walk(self.root)
 
         return walk(self.root)
+
 
     def in_order(self):
         # left - root - right
@@ -87,10 +103,15 @@ class BinaryTree:
         return values
 
 
-    
-
-
 class Node:
+    """
+    Instantiate a tree node with `Node(value)`
+
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
+    """
     def __init__(self, value):
         self.value = value
         self.left = None

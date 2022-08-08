@@ -9,7 +9,7 @@ class BinarySearchTree(BinaryTree):
         - Arguments: value
         - Return: nothing
         - Adds a new node with that value in the correct location in the binary search tree.
-        
+
     - Contains
         - Argument: value
         - Returns: boolean indicating whether or not the value is in the tree at least once.
@@ -17,7 +17,7 @@ class BinarySearchTree(BinaryTree):
 
     def __init__(self):
         # initialization here
-        pass
+        super().__init__()
 
     def add(self, value):
         """
@@ -49,10 +49,12 @@ class BinarySearchTree(BinaryTree):
 
 class Node:
     """
-    Instantiation of a tree node
-    value = value (input arg)
-    left = None
-    right = None
+    Instantiate a tree node with `Node(value)`
+
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
     """
     def __init__(self, value):
         self.value = value
