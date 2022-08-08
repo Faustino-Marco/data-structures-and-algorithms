@@ -13,23 +13,19 @@ class BinaryTree:
         self.root = None
 
     def pre_order(self):
-        # method body here
+        # root - left - right
 
-        # will build up alues in pre-order style
+        # will build up values in pre-order style
         values = []
-
-
 
         def walk(root):
 
-            # don't be a space case, remember the base case
-
+            # don't B a space case, remember the base case
             if root is None:
                 return 
-            # root - left - right
 
             # do the root (aka whatever job you're doing)
-            values.append(root.value_)
+            values.append(root.value)
 
             # left
             walk(root.left)
@@ -37,12 +33,58 @@ class BinaryTree:
             # right 
             walk(root.right)
 
-        walk(self.root)
-
-
             return values
 
+        # walk(self.root)
+
         return walk(self.root)
+
+    def in_order(self):
+        # left - root - right
+
+        # value storage
+        values = []
+
+        #walkthrough method
+        def walk(root):
+
+            #don't B a space case
+            if root is None:
+                return
+
+            # left
+            walk(root.left)
+
+            # root
+            values.append(root.value)
+
+            # right
+            walk(root.right)
+
+        walk(self.root)
+
+        return values
+    
+
+    def post_order(self):
+        values = []
+
+        def walk(root):
+            if root is None:
+                return
+            
+            # left
+            walk(root.left)
+
+            # right
+            walk(root.right)
+
+            # root
+            values.append(root.value)
+
+        walk(self.root)
+
+        return values
 
 
     def add(self, value):
@@ -62,6 +104,14 @@ class BinaryTree:
             pass
             
         walk(self.root, node)
+
+
+    def contains(self):
+        """
+        Argument: value
+        Returns: boolean indicating whether or not the value is in the tree at least once.
+        """
+        pass
 
 
 class Node:
