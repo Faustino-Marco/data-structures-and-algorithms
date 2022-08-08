@@ -87,31 +87,7 @@ class BinaryTree:
         return values
 
 
-    def add(self, value):
-        """
-        wrap the value in a Node and add it at the correcet spot
-        """
-
-        node = Node(value)
-
-        if not self.root:
-            self.root = node
-        
-        def walk(root, node_to_add):
-            if root is None:
-                return 
-        def walk(root, node_to_add):
-            pass
-            
-        walk(self.root, node)
-
-
-    def contains(self):
-        """
-        Argument: value
-        Returns: boolean indicating whether or not the value is in the tree at least once.
-        """
-        pass
+    
 
 
 class Node:
