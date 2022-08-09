@@ -8,12 +8,23 @@ def breadth_first(tree):
     Return: list of all values in the tree, in the order they were encountered
     """
     breadth_queue = Queue()
-    breadth_queue.enqueue(tree.root)
-
-    
     values = []
+    
+    if tree.root is not None:
+        breadth_queue.enqueue(tree.root)
+    else: 
+        return
 
-    def walk(root):
-        values.append(root.value)
+    while not breadth_queue.is_empty():
+        front_node = breadth_queue.dequeue()
+        values.append(front_node.value)
+        
+        if front_node.left:
+            breadth_queue.enqueue(front_node.left)
+        
+        if front_node.right:
+            breadth_queue.enqueue(front_node.right)
+   
+
 
     return values
