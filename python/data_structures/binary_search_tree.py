@@ -1,4 +1,4 @@
-from data_structures.binary_tree import BinaryTree
+from data_structures.binary_tree import BinaryTree, Node
 
 
 class BinarySearchTree(BinaryTree):
@@ -16,6 +16,9 @@ class BinarySearchTree(BinaryTree):
     """
 
     def __init__(self):
+        """
+        super().__init__() from ancestor BinaryTree class
+        """
         # initialization here
         super().__init__()
 
@@ -34,29 +37,56 @@ class BinarySearchTree(BinaryTree):
         def walk(root, node_to_add):
             if root is None:
                 return 
-        def walk(root, node_to_add):
-            pass
-            
+
+            if node_to_add.value < root.value:
+                if root.left is None:
+                    print("no root.left, adding now")
+                    root.left = node_to_add
+                else:
+                    print("root.left taken, walking left")
+                    walk(root.left, node_to_add)
+            if node_to_add.value > root.value:
+                if root.right is None:
+                    print("no root.right, adding now")
+                    root.right = node_to_add                 
+                else:
+                    print("root.right taken, walking right")
+                    walk(root.right, node_to_add)
+
         walk(self.root, node)
 
 
-    def contains(self):
+    def contains(self, target):
         """
         Argument: value
         Returns: boolean indicating whether or not the value is in the tree at least once.
         """
-        pass
+        def walk(root):
+            if root is None:
+                return False
 
-class Node:
-    """
-    Instantiate a tree node with `Node(value)`
+            if root.value == target:
+                return True
 
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
-    """
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
+            if target < root.value:
+                return walk(root.left)
+            else:
+                return walk(root.right)
+
+        return walk(self.root)
+
+
+##### IMPORT NODE FROM BINARY TREE (SEE IMPORTS) #####
+# class Node:
+#     """
+#     Instantiate a tree node with `Node(value)`
+
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
+#     """
+#     def __init__(self, value):
+#         self.value = value
+#         self.left = None
+#         self.right = None
