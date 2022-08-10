@@ -83,6 +83,7 @@ class BinaryTree:
     
 
     def post_order(self):
+
         values = []
 
         def walk(root):
@@ -101,6 +102,41 @@ class BinaryTree:
         walk(self.root)
 
         return values
+
+    def find_maximum_value(self):
+        """
+        find maximum value
+        Arguments: none
+        Returns: number
+        """
+        current_max = 0
+        current_min = 0
+
+        def walk(root):
+            nonlocal current_max
+            # global current_min
+
+            #don't B a space case
+            if root is None:
+                return
+
+            # left
+            walk(root.left)
+
+            # root
+            if root.value > current_max:
+                current_max = root.value
+            
+            # if root.value < current_min:
+            #     current_min = root.value
+
+            # right
+            walk(root.right)
+
+        walk(self.root)
+
+        return current_max
+            
 
 
 class Node:
