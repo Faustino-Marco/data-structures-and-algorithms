@@ -1,4 +1,4 @@
-from data_structures.stack_and_queue.stack import Stack
+from data_structures.stack import Stack
 
 class PseudoQueue:
     def __init__(self):

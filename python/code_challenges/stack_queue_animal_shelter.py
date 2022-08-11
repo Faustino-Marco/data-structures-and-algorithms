@@ -1,4 +1,4 @@
-from data_structures.stack_and_queue.queue import Queue
+from data_structures.queue import Queue
 from data_structures.invalid_operation_error import InvalidOperationError
 
 class AnimalShelter:
@@ -8,13 +8,15 @@ class AnimalShelter:
 
     def enqueue(self, animal):
         if animal.animal_type == "dog":
+            print("doggggggg")
             self.dogs.enqueue(animal)
         
-        elif animal.animal_type == "cat":
+        if animal.animal_type == "cat":
             self.cats.enqueue(animal)
 
-        else:
-            raise InvalidOperationError()
+        if not animal.animal_type:
+            print("wtf")
+            raise InvalidOperationError
 
     def dequeue(self, pref):
         if pref == "dog":
@@ -28,11 +30,11 @@ class AnimalShelter:
 
 
 class Dog:
-    def __init__(self, next_=None):
-        self.animal_type = "Dog"
+    def __init__(self):
+        self.animal_type = "dog"
 
 class Cat:
-    def __init__(self, next_=None):
-        self.animal_type = "Cat"
+    def __init__(self):
+        self.animal_type = "cat"
        
 
