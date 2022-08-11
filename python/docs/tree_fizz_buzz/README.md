@@ -13,6 +13,10 @@ Determine whether or not the value of each node is divisible by 3, 5 or both. Cr
 - If the value is divisible by 3 and 5, - replace the value with “FizzBuzz”
 - If the value is not divisible by 3 or - 5, simply turn the number into a - String.
 
+## Whiteboard
+(missing pseudo code)
+![tree-fizz-buzz-whiteboard](tree-fizz-buzz.jpg)
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 ### Space
