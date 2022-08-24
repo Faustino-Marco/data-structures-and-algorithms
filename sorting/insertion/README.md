@@ -30,8 +30,21 @@ Here's the pseudo-code we're starting with:
 - Let's use our pseudo-code write some Python code and step through the problem, one iteration at a time...
 
 ```Python
-arr = [8, 4, 23, 42, 16, 15]
+values = [8, 4, 23, 42, 16, 15]
 
-for idx, val in enumerate(arr):
+def insertion_sort(arr):
+  for i, num in enumerate(arr):
+    # print(i)
+    j = i - 1
+    # print(i, j)
+    # temp = nums[i]
+    while j >= 0 and num < arr[j]:
+      arr[j+1] = arr[j]
+      j -= 1
+      
+    arr[j+1] = num
 
+print(values)
+insertion_sort(values)
+print(values)
 ```
