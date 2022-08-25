@@ -22,29 +22,37 @@ Here's the pseudo-code we're starting with:
       arr[j + 1] <-- temp
 ```
 
-## Step-Through
-- First of all, here's our input array:
+## Python Code
+First of all, here's our input array:
 
 `[8, 4, 23, 42, 16, 15]`
 
-- Let's use our pseudo-code write some Python code and step through the problem, one iteration at a time...
+- Let's use our pseudo-code to write some Python code and step through the problem, one iteration at a time...
 
 ```Python
 values = [8, 4, 23, 42, 16, 15]
 
 def insertion_sort(arr):
   for i, num in enumerate(arr):
-    # print(i)
     j = i - 1
-    # print(i, j)
-    # temp = nums[i]
     while j >= 0 and num < arr[j]:
       arr[j+1] = arr[j]
       j -= 1
-      
     arr[j+1] = num
 
 print(values)
 insertion_sort(values)
 print(values)
 ```
+
+## Step-Through
+Each pass through the array in our function `insertion_sort(values)` evaluates the indices and values at each index in the input array (values).
+
+We set the variable `j` equal to the index - 1. This way, we can compare each value to the value that came before it.
+
+If the current value at the index in question is less than the value at index `j`, or index - 1, then the greater of the two replaces the current value. 
+
+## Result
+The result is a sorted array, in ascending order. 
+
+`[4, 8, 15, 16, 23, 42]`
