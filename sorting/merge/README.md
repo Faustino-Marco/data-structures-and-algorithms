@@ -41,4 +41,13 @@ ALGORITHM Merge(left, right, arr)
 ```
 
 ## Python-Code
+
+### Input
+Here's our input list:
+`[8,4,23,42,16,15]`
+
+### Python
+
+
 ## Stepthrough & Graphics
+
