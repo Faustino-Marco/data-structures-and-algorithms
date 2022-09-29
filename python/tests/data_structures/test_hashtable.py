@@ -5,18 +5,22 @@ from data_structures.hashtable import Hashtable
 def test_exists():
     assert Hashtable
 
+# @pytest.mark.skip("TODO")
 def test_get_returns_none_for_missing_key():
     hashtable = Hashtable()
     actual = hashtable.get("spam")
     expected = None
     assert actual == expected
 
+# @pytest.mark.skip("TODO")
 def test_buckets_size():
     table = Hashtable()
     actual = len(table.buckets)
     expected = 1024
     assert actual == expected
     
+
+# @pytest.mark.skip("TODO")
 def test_hash_in_range():
     table = Hashtable(size=2)
     keys = ["spam", "eggs", "bacon", "toast"]
@@ -24,25 +28,28 @@ def test_hash_in_range():
         index = table.hash(key)
         assert 0 <= index < table.size
 
+# @pytest.mark.skip("TODO")
 def test_set_does_not_blow_up():
     table = Hashtable()
     table.set("eggs", "bacon")
     assert True
 
+
+# @pytest.mark.skip("TODO")
 def test_keys():
     table = Hashtable()
     table.set("eggs", "bacon")
     table.set("ping", "pong")
     keys = table.keys()
     actual = keys
-    expected = ["eggs", "bacon"]
+    expected = ["ping", "eggs"]
     assert actual == expected 
     
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_buckets_size():
     table = Hashtable()
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_get_apple():
     hashtable = Hashtable()
     hashtable.set("apple", "Used for apple sauce")
@@ -61,7 +68,7 @@ def test_internals():
     actual = []
 
     # NOTE: purposely breaking encapsulation to test the "internals" of Hashmap
-    for item in hashtable._buckets:
+    for item in hashtable.buckets:
         if item:
             actual.append(item.display())
 

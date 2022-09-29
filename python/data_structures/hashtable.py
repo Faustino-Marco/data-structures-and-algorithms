@@ -79,6 +79,7 @@ class Hashtable:
                 while current:
                     kvp = current.value
                     gathered_keys.append(kvp[0])
+                    current = current.next
         return gathered_keys
 
 
