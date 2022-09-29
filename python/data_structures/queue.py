@@ -24,7 +24,7 @@ class Queue:
     
     def dequeue(self):
         if self.front is None:
-            raise InvalidOperationError
+            raise InvalidOperationError("I just don't know, it's not showing anything for self.front??????")
         else:
             # remove front
             # reset front
