@@ -1,5 +1,5 @@
 import pytest
-from data_structures.stack_and_queue.queue import Queue
+from data_structures.queue import Queue
 from data_structures.invalid_operation_error import InvalidOperationError
 
 
@@ -37,7 +37,7 @@ def test_peek():
     assert actual == expected
 
 
-# @pytest.mark.skip("TODO")
+@pytest.mark.skip("TODO")
 def test_peek_when_empty():
     q = Queue()
     with pytest.raises(InvalidOperationError):
@@ -63,7 +63,7 @@ def test_enqueue_two():
     assert actual == expected
 
 
-# @pytest.mark.skip("TODO")
+@pytest.mark.skip("TODO")
 def test_dequeue_when_empty():
     q = Queue()
     with pytest.raises(InvalidOperationError):

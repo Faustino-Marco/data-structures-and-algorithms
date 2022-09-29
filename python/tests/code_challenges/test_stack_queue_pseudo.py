@@ -1,6 +1,6 @@
 import pytest
 from code_challenges.stack_queue_pseudo import PseudoQueue
-from data_structures.stack_and_queue.stack import Stack
+from data_structures.stack import Stack
 
 
 def test_exists():

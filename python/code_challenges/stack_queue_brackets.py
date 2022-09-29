@@ -1,4 +1,5 @@
 # from data_structures.queue import Queue
+from data_structures.stack import Stack
 
 # square_queue_open = []
 # square_queue_closed = []
