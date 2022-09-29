@@ -2,16 +2,50 @@ from data_structures.linked_list import LinkedList
 
 class Hashtable:
     """
-    Put docstring here
+    set
+        - Arguments: key, value
+        - Returns: nothing
+        This method should hash the key, and set the key and value pair in the table, handling collisions as needed.
+        Should a given key already exist, replace its value from the value argument given to this method.
+    
+    get
+        - Arguments: key
+        - Returns: Value associated with that key in the table
+    
+    has
+        - Arguments: key
+        - Returns: Boolean, indicating if the key exists in the table already.
+    
+    keys
+        - Returns: Collection of keys
+    
+    hash
+        - Arguments: key
+        - Returns: Index in the collection for that key
     """
 
-    def __init__(self, size):
+    def __init__(self, size=1024):
         # initialization here
         self.size = size
+        self.buckets = [None] * size
 
     def get(self, key):
         # method body here
-        pass
+        values = []
+        idx = self.hash(key)
+        bucket = self.buckets[idx]
+        if not bucket:
+            return None
+        current = bucket.head
+        while current:
+            if key == current.value[0]
+                values.append(current.value[1])
+            current = current.next
+        if len(values) == 1:
+            return values[0]
+        if len(values) > 1:
+            return tuple(values)
+        return None
 
     def set(self, key, value):
         index = self.hash(key)
