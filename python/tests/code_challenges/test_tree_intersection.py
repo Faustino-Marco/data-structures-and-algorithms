@@ -24,6 +24,7 @@ def test_tree_intersection():
 
     assert sorted(actual) == sorted(expected)
 
+    
 def add_values_to_empty_tree(tree, values):
     """
     Helper function to add given values to BinaryTree
@@ -31,11 +32,11 @@ def add_values_to_empty_tree(tree, values):
     tree.root = Node(values.pop())
     q = Queue()
 
-    q.enqueue(tree.root.value)
+    q.enqueue(tree.root)
 
     while values:
         node = q.dequeue()
         node.left = Node(values.pop())
         node.right = Node(values.pop()) if values else None
-        q.enqueue(node.left.value)
-        q.enqueue(node.right.value)
+        q.enqueue(node.left)
+        q.enqueue(node.right)
