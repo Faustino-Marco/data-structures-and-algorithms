@@ -5,9 +5,8 @@ from code_challenges.hashtable_left_join import left_join
 def test_exists():
     assert left_join
 
-
-@pytest.mark.skip("TODO")
-def test_example():
+# @pytest.mark.skip("TODO")
+def test_left_join():
     synonyms = {
         "diligent": "employed",
         "fond": "enamored",
@@ -32,5 +31,4 @@ def test_example():
     ]
 
     actual = left_join(synonyms, antonyms)
-
-    assert actual == expected
+    assert sorted(actual) == sorted(expected)
