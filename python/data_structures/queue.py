@@ -23,7 +23,7 @@ class Queue:
             self.rear = new_rear
     
     def dequeue(self):
-        if not self.front:
+        if self.front is None:
             raise InvalidOperationError
         else:
             # remove front
