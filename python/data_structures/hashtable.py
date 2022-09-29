@@ -38,7 +38,7 @@ class Hashtable:
             return None
         current = bucket.head
         while current:
-            if key == current.value[0]
+            if key == current.value[0]:
                 values.append(current.value[1])
             current = current.next
         if len(values) == 1:

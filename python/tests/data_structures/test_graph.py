@@ -43,7 +43,6 @@ def test_size():
 
     assert actual == expected
 
-
 @pytest.mark.skip("TODO")
 def test_add_edge():
     g = Graph()

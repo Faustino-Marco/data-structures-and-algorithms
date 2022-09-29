@@ -43,4 +43,4 @@ class Vertex:
     
 class Edge:
     def __init__(self, vertex, weight):
-        
+        pass
