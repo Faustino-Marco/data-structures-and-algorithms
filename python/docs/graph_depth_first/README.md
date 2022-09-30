@@ -1,7 +1,7 @@
-# Breadth-First Traversal of a Graph
+# Depth-First Traversal of a Graph
 
 ## Challenge
-Extending an Implementation: Write a function called business trip
+Extending an Implementation: Write a depth-first method for the graph class
 
 ## Approach & Efficiency
 Added code for DFS:
@@ -25,6 +25,7 @@ Added code for DFS:
 
 ## API
 <!-- Description of each method publicly available in your Graph -->
-
-Arguments: graph, array of city names
-Return: the cost of the trip (if it’s possible) or null (if not)
+Name: Depth first
+Arguments: Node (Starting point of search)
+Return: A collection of nodes in their pre-order depth-first traversal order
+Program output: Display the collection
