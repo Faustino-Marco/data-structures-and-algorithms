@@ -46,8 +46,22 @@ ALGORITHM Merge(left, right, arr)
 Here's our input list:
 `[8,4,23,42,16,15]`
 
-### Python
 
+## Stepthrough
+So basically, the list is chopped in half as many times as possible, then sorted and rejoined again as follows:
 
-## Stepthrough & Graphics
+[8, 4, 23] & [42, 16, 15]
 
+then again...
+
+[8, 4] & [23], [42, 16] & [15]
+
+Then these figures are sorted and merged back into one another sequentially like this:
+
+[4, 8, 23] & [15, 16, 42]
+
+Then, finally:
+
+[4, 8, 15, 16, 23, 42]
+
+Voila!!
