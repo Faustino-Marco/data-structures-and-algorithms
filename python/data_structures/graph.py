@@ -59,18 +59,20 @@ class Graph:
     def breadth_first(self, vertex):
         all_vertices = []
         breadth = Queue()
-        visited_vertices = set()
+        visited_vertices = []
         breadth.enqueue(vertex)
-        visited_vertices.add(vertex)
+        visited_vertices.append(vertex)
 
         while not breadth.is_empty():
             front = breadth.dequeue()
             all_vertices.append(front.value)
+            print(all_vertices)
 
-            for neighbor in self.get_neighbors(front):
-                if neighbor.vertex not in visited_vertices:
-                    visited_vertices.add(neighbor.vertex)
-                    breadth.enqueue(neighbor.vertex)
+            for edge in self.get_neighbors(front):
+                
+                if edge.vertex not in visited_vertices:
+                    visited_vertices.append(edge.vertex)
+                    breadth.enqueue(edge.vertex)
         return all_vertices
 
     def depth_first_search(self, start):
