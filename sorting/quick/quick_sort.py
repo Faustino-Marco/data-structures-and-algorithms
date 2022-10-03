@@ -1,6 +1,6 @@
 def quick_sort(nums, left, right):
     if left < right:
-        position = partition(nums, left, right)
+        position = piece(nums, left, right)
         quick_sort(nums, left, position - 1)
         quick_sort(nums, position + 1, right)
 
@@ -15,7 +15,7 @@ def piece(nums, left, right):
             low += 1
             swap(nums, i, low)
 
-    swap(nums, right, low + 1)
+    switch(nums, right, low + 1)
 
     return low + 1
 
