@@ -1,41 +1,30 @@
-# from data_structures.queue import Queue
 from data_structures.stack import Stack
 
-# square_queue_open = []
-# square_queue_closed = []
-# round_queue_open = []
-# round_queue_closed = []
-# curly_queue_open = []
-# curly_queue_closed = []
+def multi_bracket_validation(string):
+    open_stack = Stack()
+    openers = ["{","[","("]
+    closers = ["}","]",")"]
+    pairs = {
+        '}': '{',
+        ']': '[',
+        ')': '('
+    }
 
-open_bracks = Stack()
-openers = ["(", "[", "{"]
-closers = [")", "]", "}"]
-matches = ["()", "[]", "{}"]
+    chars = list(string)
+    for char in chars:
+        if char in openers:
+            open_stack.push(char)
 
-def multi_bracket_validation(bracks):
-    if len(bracks) // 2 != 0:
-        return False
-    elif bracks[0] in closers:
-        return False
-    else:
-        for x in len(bracks):
-            if bracks[x] in openers:
-                open_bracks.push(x)
-                continue
+        if char in closers:
+            if open_stack.is_empty():
+                return False
+
+            if pairs.get(char) == open_stack.peek():
+                open_stack.pop()
             else:
-                print("hello world")
-                match_combo = (bracks[0] + open_bracks.peek())
-                print(match_combo)
-                if (bracks[0] + open_bracks.peek()) in matches:
-                    open_bracks.pop()
-                    continue
-                else:
-                    return False
+                return False
 
-            
-
-multi_bracket_validation("[[{}]]")
+    return True
 
 
         # for let in bracks:
@@ -56,5 +45,4 @@ multi_bracket_validation("[[{}]]")
             
         
 
-multi_bracket_validation("[[{}]]")
 
